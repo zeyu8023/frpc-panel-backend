@@ -1,0 +1,4 @@
+{
+  "frpc_ini": "/etc/frpc/frpc.ini",
+  "container_name": "frpc_client"
+}
