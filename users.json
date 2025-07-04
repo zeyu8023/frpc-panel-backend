@@ -1,0 +1,5 @@
+{
+  "admin": {
+    "password": "$2b$12$eW5zU1Z1Z0F0b1ZxZ0F0eOeZ0F0eOeZ0F0eOeZ0F0eOeZ0F0eOe"  // 示例 bcrypt hash
+  }
+}
