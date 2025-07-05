@@ -15,4 +15,4 @@ COPY . .
 ENV PORT=8035
 
 # 启动 FastAPI 服务
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8035"]
