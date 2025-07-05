@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# 自动生成 .env 文件（如果不存在）
+# 自动生成 .env（如果不存在）
 if [ ! -f .env ]; then
   echo "生成默认 .env 文件..."
   cat <<EOF > .env
@@ -13,5 +13,11 @@ PORT=8035
 EOF
 fi
 
-# 启动 FastAPI 服务
-exec uvicorn main:app --host 0.0.0.0 --port \${PORT:-8035}
+# 读取 .env
+export $(grep -v '^#' .env | xargs)
+
+# 提前展开端口变量
+PORT=${PORT:-8035}
+
+# 启动服务
+exec uvicorn main:app --host 0.0.0.0 --port "$PORT"
